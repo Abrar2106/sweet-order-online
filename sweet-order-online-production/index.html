@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sweet Order | Cookies & Brownies</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div><h1>🍪 Sweet Order</h1><p>Cookies & Brownies Homemade</p></div></header>
+<main>
+<section class="card"><h2>Menu</h2>
+<div class="products">
+<article><div class="emoji">🍪</div><h3>Cookies</h3><p class="price">Rp5.000</p><div class="qty"><button onclick="changeQty('cookies',-1)">−</button><b id="qCookies">0</b><button onclick="changeQty('cookies',1)">+</button></div></article>
+<article><div class="emoji">🍫</div><h3>Brownies</h3><p class="price">Rp35.000</p><div class="qty"><button onclick="changeQty('brownies',-1)">−</button><b id="qBrownies">0</b><button onclick="changeQty('brownies',1)">+</button></div></article>
+</div></section>
+<section class="card"><h2>Data Pemesan</h2>
+<form id="orderForm">
+<label>Nama lengkap<input id="name" required></label>
+<label>No. WhatsApp<input id="phone" type="tel" inputmode="tel" placeholder="08xxxxxxxxxx" required></label>
+<label>Alamat<textarea id="address" required></textarea></label>
+<label>Hari pre-order<select id="day" required><option value="">Pilih hari</option><option>Senin</option><option>Sabtu</option></select></label>
+<p class="note">Pre-order tersedia setiap Senin dan Sabtu.</p>
+<div class="summary">Cookies <span id="sCookies">0</span><br>Brownies <span id="sBrownies">0</span><hr>Total <strong id="total">Rp0</strong></div>
+<button class="primary" type="submit">Kirim Pesanan</button>
+</form>
+<div id="success" class="success" hidden></div>
+</section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script><script src="app.js"></script>
+</body></html>
